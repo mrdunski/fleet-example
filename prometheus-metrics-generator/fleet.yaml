@@ -2,7 +2,7 @@ defaultNamespace: prometheus-metrics-generator
 helm:
   releaseName: prometheus-metrics-generator
   chart: prometheus-metrics-generator
-  version: 0.5.0+c5141df30ebcf4ee724140918b3bafb7836c109d
+  version: 0.6.0+5e4324f5086d8742eff34a6c4502052bf9acc535
   repo: https://jenkins:jenkins4ever@charts.dev.kende.pl
   values:
     ingress:
