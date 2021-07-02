@@ -1,0 +1,27 @@
+defaultNamespace: football-metrics
+helm:
+  releaseName: football-metrics
+  chart: football-metrics
+  version: 0.10.0+16f7888a026c8a3b84ccf7f71dc92dc6c5bdaddd
+  repo: https://jenkins:jenkins4ever@charts.kende.pl
+  values:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+      hosts:
+      - host: football-metrics.dev.kende.pl
+        paths:
+        - path: /
+      tls:
+      - secretName: football-metrics.dev.kende.pl
+        hosts:
+        - football-metrics.dev.kende.pl
+    resources:
+      limits:
+        cpu: 500m
+        memory: 128Mi
+      requests:
+        cpu: 10m
+        memory: 64Mi
